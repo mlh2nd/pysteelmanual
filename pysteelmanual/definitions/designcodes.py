@@ -1,0 +1,1 @@
+DESIGN_CODES = ["aisc_360_22"]
