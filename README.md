@@ -6,3 +6,17 @@ Initially, the primary focus will be on limit state checks for non-composite ste
 After implementing the limit state checks, I may expand the library to include connection design, composite members, and more.
 
 This is a personal project and is not affiliated with or endorsed by AISC.
+
+## Member Design Progress
+
+|Section Type   |Tension    |Compression   |Flexure    |Shear      |Torsion    |Combined   |
+|---------------|-----------|--------------|-----------|-----------|-----------|-----------|
+|W, H, and S    |Not started|In progress 🚧|Not started|Not started|Not started|Not started|
+|Rectangular HSS|Not started|Not started   |Not started|Not started|Not started|Not started|
+|Round HSS      |Not started|Not started   |Not started|Not started|Not started|Not started|
+|Pipe           |Not started|Not started   |Not started|Not started|Not started|Not started|
+|C and MC       |Not started|Not started   |Not started|Not started|Not started|Not started|
+|Single Angles  |Not started|Not started   |Not started|Not started|Not started|Not started|
+|Double Angles  |Not started|Not started   |Not started|Not started|Not started|Not started|
+|Rectangular Bar|Not started|Not started   |Not started|Not started|Not started|Not started|
+|Round Bar      |Not started|Not started   |Not started|Not started|Not started|Not started|
