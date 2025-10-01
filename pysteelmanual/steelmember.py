@@ -1,12 +1,7 @@
 from steelpy.steelpy import Section
 from .definitions.designcodes import DESIGN_CODES
 from .steelcodes import aisc_360_22
-
-
-unit_systems = {"in-kip": {"length":"in", "area":"in^2", "volume":"in^3",
-                           "force":"kip", "stress":"ksi", "moment":"kip-in"},
-                "mm-kN": {"length":"mm", "area":"mm^2", "volume":"mm^3",
-                          "force":"kN", "stress":"MPa", "moment":"N-m"}}
+from .units import unit_systems
 
 
 class SteelMember():

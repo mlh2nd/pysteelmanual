@@ -12,6 +12,20 @@ wheels = [
 ]
 
 [[package]]
+name = "efficalc"
+version = "1.2.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "latexexpr-efficalc" },
+    { name = "pylatexenc" },
+    { name = "pytest" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/91/03/5941c2bc81a8d8a01d701f1f431a00a3783f382dd53393b4cbad74f2b0ac/efficalc-1.2.7.tar.gz", hash = "sha256:b1ea5024e318255efb31b11feedd52ffda533887f31e8f2ecebb641313d72ada", size = 269842 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a0/fe/af08ee5c644d1f87da1602dffc859a1349f62a98ed234e599dcea3bff15b/efficalc-1.2.7-py3-none-any.whl", hash = "sha256:6f33e449beb1adffb035c8b91e2d5e25fdc910cab91bf27d3d812767183b3193", size = 276509 },
+]
+
+[[package]]
 name = "et-xmlfile"
 version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -27,6 +41,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f2/97/ebf4da567aa6827c909642694d71c9fcf53e5b504f2d96afea02718862f3/iniconfig-2.1.0.tar.gz", hash = "sha256:3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7", size = 4793 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2c/e1/e6716421ea10d38022b952c159d5161ca1193197fb744506875fbb87ea7b/iniconfig-2.1.0-py3-none-any.whl", hash = "sha256:9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760", size = 6050 },
+]
+
+[[package]]
+name = "latexexpr-efficalc"
+version = "0.5.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5d/17/39f1ff850e50ebdf9e33b6cbe793ce7cf328684a2f083784955a07187130/latexexpr_efficalc-0.5.3.tar.gz", hash = "sha256:0ea0ab60d4700f18538df4d9bb86b762daf2effb4fc86bb4267673cee66abd74", size = 22190 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5c/dd/aab7ebb2e52eb89738a84d0191727a03de530e4e7d7ad3a798a0e73e599f/latexexpr_efficalc-0.5.3-py3-none-any.whl", hash = "sha256:7d88b0e9f6b41e914251492277f89d3ec8daecf3bed859c136e1cd9cdd9095ee", size = 20327 },
 ]
 
 [[package]]
@@ -148,10 +171,17 @@ wheels = [
 ]
 
 [[package]]
+name = "pylatexenc"
+version = "2.10"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5d/ab/34ec41718af73c00119d0351b7a2531d2ebddb51833a36448fc7b862be60/pylatexenc-2.10.tar.gz", hash = "sha256:3dd8fd84eb46dc30bee1e23eaab8d8fb5a7f507347b23e5f38ad9675c84f40d3", size = 162597 }
+
+[[package]]
 name = "pysteelmanual"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "efficalc" },
     { name = "pytest" },
     { name = "steelpy" },
 ]
@@ -163,6 +193,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "efficalc", specifier = ">=1.2.7" },
     { name = "pytest", specifier = ">=8.4.2" },
     { name = "steelpy", specifier = ">=1.1.1" },
 ]

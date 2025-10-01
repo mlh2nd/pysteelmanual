@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "efficalc>=1.2.7",
     "pytest>=8.4.2",
     "steelpy>=1.1.1",
 ]
