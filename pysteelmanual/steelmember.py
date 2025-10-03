@@ -9,16 +9,16 @@ class SteelMember():
     Member class for steel design.
     """
     def __init__(self, label:str="Steel Member", 
-                 code:str="aisc_360_22",
-                 method:str="lrfd",
+                 design_code:str="aisc_360_22",
+                 design_method:str="lrfd",
                  units:dict=unit_systems["in-kip"], 
                  section:str|Section=None, 
                  length:float=0.0,
                  force_actions:dict={},
                  design_props:dict={}):
         self.label = label
-        self.code = code.lower()
-        self.method = method.lower()
+        self.design_code = design_code.lower()
+        self.design_method = design_method.lower()
         self.section = section
         self.length = length
         self.units = units
@@ -28,7 +28,7 @@ class SteelMember():
         self.validate()
 
     def validate(self):
-        if self.code not in DESIGN_CODES:
+        if self.design_code not in DESIGN_CODES:
             raise ValueError(f"""Invalid design code \"{self.code}\".\n
                              Available codes: {DESIGN_CODES}""")
     

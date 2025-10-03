@@ -12,8 +12,8 @@ def test_steelmember_methods():
                           "major_flex":{"Lb":300}})
     
     assert member.label == "Test Member"
-    assert member.code == "aisc_360_22"
-    assert member.method == "lrfd"
+    assert member.design_code == "aisc_360_22"
+    assert member.design_method == "lrfd"
     assert member.units["length"] == "mm"
     assert member.section == "W8X10"
     assert member.length == 1200
