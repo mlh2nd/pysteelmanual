@@ -22,6 +22,12 @@ def test_calc_nominal_compressive_strength_E3():
     assert isclose(comp.calc_nominal_compressive_strength_E3(Fn, Ag), 5107.5)
 
 
+def test_calc_nominal_flexural_buckling_stress():
+    Fy = 50
+    assert isclose(comp.calc_nominal_flexural_buckling_stress(61, Fy), 35.47928304622102)
+    assert isclose(comp.calc_nominal_flexural_buckling_stress(13.61, Fy), 11.93597)
+
+
 def test_calc_elastic_buckling_stress():
     assert isclose(comp.calc_elastic_buckling_stress(68.5, 29000), 60.99814111)
     assert isclose(comp.calc_elastic_buckling_stress(145, 29000), 13.61324745)
