@@ -1,25 +1,30 @@
 from steelpy.steelpy import Section
 from .definitions.designcodes import DESIGN_CODES
 from .steelcodes import aisc_360_22
-from .units import unit_systems
+from .units import UnitSystem, IN_KIP
+from .materials import SteelMaterial
+from .sections import SteelSection
 
 
 class SteelMember():
     """
     Member class for steel design.
     """
-    def __init__(self, label:str="Steel Member", 
+    def __init__(self, 
+                 label:str, 
+                 section:str|SteelSection=None, 
+                 material:SteelMaterial=None,
+                 length:float=0.0,
                  design_code:str="aisc_360_22",
                  design_method:str="lrfd",
-                 units:dict=unit_systems["in-kip"], 
-                 section:str|Section=None, 
-                 length:float=0.0,
+                 units:UnitSystem=IN_KIP, 
                  force_actions:dict={},
                  design_props:dict={}):
         self.label = label
         self.design_code = design_code.lower()
         self.design_method = design_method.lower()
         self.section = section
+        self.material = material
         self.length = length
         self.units = units
         self.design_props = design_props
@@ -29,8 +34,15 @@ class SteelMember():
 
     def validate(self):
         if self.design_code not in DESIGN_CODES:
-            raise ValueError(f"""Invalid design code \"{self.code}\".\n
+            raise ValueError(f"""Invalid design code \"{self.design_code}\".\n
                              Available codes: {DESIGN_CODES}""")
+        if (self.section.units != self.units or
+            self.material.units != self.units):
+            raise ValueError(f"Incompatible unit systems:\n\
+                                Member units: {self.units.label}\n\
+                                Section units: {self.section.units.label}\n\
+                                Material units: {self.material.units.label}\n\
+                                All components must use same unit system.")
     
     def design_member(self):
         """
